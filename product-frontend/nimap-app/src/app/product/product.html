@@ -1,0 +1,30 @@
+<h3>Product Master</h3>
+
+<input [(ngModel)]="productName" placeholder="Product Name">
+
+<select [(ngModel)]="categoryId">
+  <option *ngFor="let c of categories" [value]="c.CategoryId">
+    {{c.CategoryName}}
+  </option>
+</select>
+
+<button (click)="addProduct()">Add Product</button>
+
+<table border="1">
+  <tr>
+    <th>ProductId</th>
+    <th>ProductName</th>
+    <th>CategoryId</th>
+    <th>CategoryName</th>
+  </tr>
+  <tr *ngFor="let p of products">
+    <td>{{p.ProductId}}</td>
+    <td>{{p.ProductName}}</td>
+    <td>{{p.CategoryId}}</td>
+    <td>{{p.CategoryName}}</td>
+  </tr>
+</table>
+
+<button (click)="prev()">Prev</button>
+<span> Page {{page}} </span>
+<button (click)="next()">Next</button>
